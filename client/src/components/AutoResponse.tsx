@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ChatBox from "./ChatBox";
-import { Button, Stack } from "@mui/material";
+import { Button, Stack, Paper } from "@mui/material";
 import SendIcon from '@mui/icons-material/Send';
 
 
@@ -27,7 +27,7 @@ const AutoResponse = () => {
 
   const handleTextInput = (e: React.ChangeEvent<HTMLInputElement>)=>{
     setMessage(e.target.value);
-    setResponse("");
+    // setResponse("");
     };
 
 const handleResponseReceived = () => {
@@ -68,10 +68,12 @@ const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
 
   return (
     <>
+    <Paper>
     <Stack spacing={2}>
       <ChatBox text={message} onAddingText={handleTextInput} response={response} onReceivingResponse={handleResponseReceived} keyEvent={handleKeyPress} />
       <Button sx={{width: 80}} variant="contained" endIcon={<SendIcon />} onClick={handleResponseReceived}>Send</Button>
     </Stack>
+    </Paper>
   </>
   )
 }
