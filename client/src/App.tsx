@@ -1,3 +1,4 @@
+import React from 'react'
 import AutoResponse from './components/AutoResponse'
 import './App.css'
 
